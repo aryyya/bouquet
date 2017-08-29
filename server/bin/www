@@ -1,0 +1,18 @@
+// MODULES
+
+const path = require('path')
+const server = require(path.resolve(__dirname, '../app.js'))
+
+// SERVER
+
+const inDevelopment = process.env.NODE_ENV === 'development'
+const inProduction = !inDevelopment
+
+const port = process.env.PORT || inDevelopment ? 8081 : 8080
+
+server.listen(port, () => {
+  if (inDevelopment) {
+    console.log('Development mode enabled.')
+  }
+  console.log(`Listening on port ${port}.`)
+})
