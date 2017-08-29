@@ -28,6 +28,7 @@ if (inDevelopment) {
   })
 }
 
+// parse json encoded post bodies
 app.use(bodyParser.json())
 
 // logging
